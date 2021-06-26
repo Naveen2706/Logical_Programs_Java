@@ -203,6 +203,21 @@ public class Utility {
         System.out.println("Reversed Number: " + reversedNum);
     }
 
+    /*purpose - to get distinct coupon number
+    called in - CouponNumber program- day6
+    * */
+
+    public static void getCouponNumber(int[] couponArray, int numberOfCoupons) {
+        for (int i = 0; i < numberOfCoupons; i++) {
+            couponArray[i] = (int) (Math.random() * 1000);   //new number is gnerated and stored in array
+            for (int j = 0; j < i; j++) {
+                if (couponArray[j] == couponArray[i]) {         //checks if coupon number is repeated
+                    i = (i - 1);
+                }
+            }
+            System.out.println(i + 1 + ":: Coupon number value is ::" + couponArray[i]);
+        }
+    }
 }
 
 
